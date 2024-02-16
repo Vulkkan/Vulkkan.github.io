@@ -1,18 +1,6 @@
 @font-face {
-  font-family: 'Product Sans, Regular';
-  src: local('Product Sans'), url('../fonts/Product Sans.ttf') format('truetype');
-}
-@font-face {
   font-family: 'Linotte Mistu, Regular';
   src: local('Linotte Mistu'), url('../fonts/Linotte.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Cagliostro, Regular';
-  src: local('Cagliostro'), url('../fonts/Cagliostro.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Oneplus Sans Display, Medium';
-  src: local('OPSans'), url('../fonts/OPSans.ttf') format('truetype');
 }
 
 :root {
@@ -73,11 +61,8 @@
   --transition-3: 0.3s ease-in-out;
 
 
-  --ff-psans: 'Product Sans';
-  --ff-cag: 'Cagliostro';
   --ff-lin: 'Linotte Mistu';
-  --ff-op: 'OPSans';
-  --ff-manrope: 'Cagliostro';
+  --ff-manrope: 'Manrope';
 }
 
 
@@ -126,8 +111,8 @@ button { cursor: pointer; }
 ion-icon { pointer-events: none; }
 
 html {
-  font-family: var(--ff-psans);
-  font-size: 8.5px;
+  font-family: var(--ff-lin);
+  font-size: 9.2px;
   scroll-behavior: smooth;
 }
 
@@ -192,13 +177,15 @@ body.nav-active { overflow: hidden; }
 .h4 { font-size: var(--fs-4); }
 
 .btn {
-  color: var(--cinnamon-satin);
+  background-color: var(--cinnamon-satin);
+  color: var(--white);
+  border: 2px solid var(--cinnamon-satin);
+  border-radius: var(--radius-pill);
+
   font-size: var(--fs-6);
   font-weight: var(--fw-550);
-  border: 2px solid var(--cinnamon-satin);
   max-width: max-content;
   padding: 5px 28px;
-  border-radius: var(--radius-pill);
   transition: var(--transition-1);
   will-change: transform;
 }
@@ -207,8 +194,9 @@ body.nav-active { overflow: hidden; }
 
 .btn-primary,
 .btn-secondary:is(:hover, :focus-visible) {
-  background-color: var(--cinnamon-satin);
-  color: var(--white);
+  background-color: var(--offwhite);
+  color: black;
+
 }
 
 .section-text { font-size: var(--fs-5); }
@@ -444,9 +432,9 @@ body.dark_theme {
   margin-inline: auto;
 }
 
-.hero-banner .w-100 {
+.hero-banner {
   mask-image: url("../images/Blob.svg");
-  -webkit-mask-image: url("../images/Blog.svg");
+  -webkit-mask-image: url("../images/blob.svg");
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
@@ -485,7 +473,7 @@ body.dark_theme {
 .about .wrapper {
   display: grid;
   gap: 40px;
-  margin-block-end: 80px;
+  margin-block-end: 50px;
 }
 
 .progress-list .label-wrapper {
@@ -494,10 +482,10 @@ body.dark_theme {
   align-items: center;
   margin-block-end: 4px;
 }
-.progress-item:not(:last-child) { margin-block-end: 35px; }
+.progress-item:not(:last-child) { margin-block-end: 15px; }
 .progress {
-  background-color: var(--raisin-black_a6);
-  height: 50px;
+  background-color: var(--cultured);
+  height: 40px;
   width: 100%;
   border-radius: var(--radius-pill);
   overflow: hidden;
@@ -539,14 +527,20 @@ body.dark_theme {
 
 .skill-card {
   position: relative;
-  background: hsl(0, 0%, 19%);
-  width: 100px;
-  height: 80px;
+  color: rgb(18, 17, 17);
+  background: hsla(272, 43%, 79%, 0.591);
+  width: 90px;
+  height: 90px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
+  border-radius: 100px;
   box-shadow: 4px;
   cursor:pointer;
+}
+
+.skill {
+  width: 50px;
+  height: 50px;
 }
 
 .skill-card:hover .tooltip {
@@ -562,7 +556,6 @@ body.dark_theme {
   #PROJECTS
 \*-----------------------------------*/
 
-.project { border-block: 1px solid var(--cadet-blue-crayola_a20); }
 .project .title-wrapper { margin-block-end: 40px; }
 .project .btn { margin-block-start: 0px; }
 .project .grid-list { gap: 0px; }
@@ -737,7 +730,7 @@ textarea.input-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 5px;
   }
 
   .project .btn { min-width: max-content; }
